@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>News Portal</title>
+</head>
+
+<body>
+    <!-- --header section with navbar -->
+    <header>
+        <div class="container d-flex justify-content-between head-title">
+            <div>
+                <h1>News Portal</h1>
+            </div>
+            <div>
+                <ul class=" nav justify-content-end nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-current="page" href="#">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+
+        <section>
+            <div id='news-menu-section' class="news-menu row justify-content-center">
+                <!-- inside divs of buttons are made in js file .... -->
+
+            </div>
+        </section>
+        <section>
+            <div id="result-number-section" class="total-results ">
+                <h2><span id="number-of-news">46</span> Results have been found</h2>
+            </div>
+            <div id="no-found-msg" class="total-results d-none">
+                <h2>No Results have been found</h2>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="bootstrap/bootstrap.min.js"></script>
+
+</body>
+
+</html>

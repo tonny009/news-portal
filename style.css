@@ -1,0 +1,47 @@
+.head-title {
+    background-color: rgb(174, 159, 189);
+    padding: 10px;
+    padding-left: 15px;
+    border-radius: 5px;
+
+}
+
+.nav-list {
+    font-size: 25px;
+    color: black;
+}
+
+ul li {
+    background-color: rgb(204, 195, 195);
+    margin-left: 10px;
+}
+
+.total-results {
+    /* display: ; */
+    background-color: rgb(112, 87, 87);
+    padding: 10px;
+    color: bisque;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.menu-btn {
+    padding-left: 10px;
+    width: 130px;
+    margin-top: 4px;
+    font-size: 19px;
+    /* justify-content: flex-start; */
+}
+
+/* for mobile device-------- */
+@media only screen and (max-width:888px) {
+    .menu-btn {
+        width: 100%;
+        margin: 6px;
+        font-size: 20px;
+
+        /* position: absolute; */
+    }
+}
