@@ -51,6 +51,10 @@ ul li {
     border-radius: 50%;
 }
 
+.modal-box {
+    background-color: rgb(196, 158, 240);
+}
+
 .blog-box-clr {
     background-color: rgb(104, 82, 126);
     color: antiquewhite;

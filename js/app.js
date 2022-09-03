@@ -14,6 +14,11 @@ const loadCatData = async () => {
 
 const loadData = async (catID) => {
     toggleSpinner(true);
+    // document.getElementById('cat-btn-clr-chng').addEventListener('click', function () {
+    //     const forDisable = document.getElementById('cat-btn-clr-chng');
+    //     forDisable.classList.add('disable');
+    // }
+
     const urlOfNews = `https://openapi.programming-hero.com/api/news/category/${catID}`;
     try {
         const res = await fetch(urlOfNews);
@@ -55,7 +60,7 @@ const displayCatData = categories => {
         categoryDiv.classList.add('col-lg');
         categoryDiv.classList.add('col-sm-12', 'buttons-mobile-view');
         categoryDiv.innerHTML = ` 
-        <button onclick="loadData('${category.category_id}')" type="button" class="btn  menu-btn btn-secondary">${category.category_name}</button>`;
+        <button  onclick="loadData('${category.category_id}')" type="button" class="btn menu-btn btn-secondary">${category.category_name}</button>`;
 
         newMenuDiv.appendChild(categoryDiv);
 
@@ -126,5 +131,10 @@ const toggleSpinner = isloading => {
         loaderSection.classList.add('d-none');
     }
 }
+
+// document.getElementById('cat-btn-clr-chng').addEventListener('click', function () {
+//     const forDisable = document.getElementById('cat-btn-clr-chng');
+//     forDisable.classList.add('disable');
+// })
 
 loadCatData();
