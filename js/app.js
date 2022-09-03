@@ -14,10 +14,6 @@ const loadCatData = async () => {
 
 const loadData = async (catID) => {
     toggleSpinner(true);
-    // document.getElementById('cat-btn-clr-chng').addEventListener('click', function () {
-    //     const forDisable = document.getElementById('cat-btn-clr-chng');
-    //     forDisable.classList.add('disable');
-    // }
 
     const urlOfNews = `https://openapi.programming-hero.com/api/news/category/${catID}`;
     try {
@@ -45,8 +41,8 @@ const displayDetail = data => {
     ${data[0].details}`;
     const newsOtherDetails = document.getElementById('news-other-details');
     newsOtherDetails.innerHTML = `
-    <p>Rating:${data[0].rating.number}</p>
-    <p>Published Date:${data[0].author.published_date}</p>`
+    <p>Rating : ${data[0].rating.number}</p>
+    <p>Published Date : ${data[0].author.published_date}</p>`
 
 }
 
@@ -68,7 +64,7 @@ const displayCatData = categories => {
 
 }
 
-//for displaying category id based data display
+//for displaying category id based data display-------
 const displayData = newsDataByCatID => {
     const newsContainer = document.getElementById('newsContainer');
     newsContainer.textContent = '';
@@ -131,10 +127,5 @@ const toggleSpinner = isloading => {
         loaderSection.classList.add('d-none');
     }
 }
-
-// document.getElementById('cat-btn-clr-chng').addEventListener('click', function () {
-//     const forDisable = document.getElementById('cat-btn-clr-chng');
-//     forDisable.classList.add('disable');
-// })
 
 loadCatData();
