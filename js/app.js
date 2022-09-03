@@ -12,7 +12,6 @@ const loadData = async (catID) => {
     const datas = data.data.sort((a, b) => parseFloat(b.total_view) - parseFloat(a.total_view));
     displayData(datas);
 
-
 }
 
 
@@ -48,6 +47,8 @@ const displayData = newsDataByCatID => {
     else {
         totalNews.classList.remove('d-none');
         noNews.classList.add('d-none')
+        const newsNumber = document.getElementById('number-of-news');
+        newsNumber.innerText = newsDataByCatID.length;
 
         newsDataByCatID.forEach(news => {
             // console.log(news._id)
@@ -61,12 +62,12 @@ const displayData = newsDataByCatID => {
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h3 class="card-title">${news.title}</h3>
-                                <p class="card-text">${news.details}.</p>
+                                <p class="card-text">${news.details.length > 100 ? news.details.slice(0, 100) + '...' : news.details}.</p>
     
                                 <div class="d-flex mt-3 justify-content-between align-items-center">
                                     <div class="d-flex  align-items-center ml-0">
                                         <img class="author-img" src="${news.author.img}" alt="" srcset="">
-                                        <h5>${news.author.name}</h5>
+                                        <h5>${news.author.name === null ? "No Data" : news.author.name}</h5>
                                     </div>
                                     <div>
                                         <h5>Views : ${news.total_view === null ? "No Viwers Data" : news.total_view}</h5>
