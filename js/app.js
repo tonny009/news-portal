@@ -14,6 +14,23 @@ const loadData = async (catID) => {
 
 }
 
+// display data details with modals---------
+const loadDetailsNews = async (id) => {
+    const url = `https://openapi.programming-hero.com/api/news/${id}`
+    const res = await fetch(url);
+    const data = await res.json();
+    displayDetail(data.data);
+}
+
+const displayDetail = data => {
+    const modalTitle = document.getElementById('newsModalLabel');
+    modalTitle.innerHTML = data[0].details;
+    const newsOtherDetails = document.getElementById('news-other-details');
+    newsOtherDetails.innerHTML = `<p>Rating:${data[0].rating.number}</p>
+    <p>Published Date:${data[0].author.published_date}</p>`
+
+}
+
 
 //For displaying categories list as menu button------
 const displayCatData = categories => {
@@ -72,7 +89,7 @@ const displayData = newsDataByCatID => {
                                     <div>
                                         <h5>Views : ${news.total_view === null ? "No Viwers Data" : news.total_view}</h5>
                                     </div>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    <button onclick="loadDetailsNews('${news._id}')" class="btn btn-primary" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal">
                                         Show News Details
                                     </button>
