@@ -33,17 +33,50 @@
     <main class="container">
 
         <section>
-            <div id='news-menu-section' class="news-menu row justify-content-center">
+            <div id='news-menu-section' class="news-menu row justify-content-center ">
                 <!-- inside divs of buttons are made in js file .... -->
 
             </div>
         </section>
         <section>
-            <div id="result-number-section" class="total-results ">
+            <div id="result-number-section" class="total-results d-none">
                 <h2><span id="number-of-news">46</span> Results have been found</h2>
             </div>
             <div id="no-found-msg" class="total-results d-none">
                 <h2>No Results have been found</h2>
+            </div>
+
+
+
+            <!-- results as cards---------- -->
+            <div id="newsContainer" class="card mb-3" style="max-width: 1240px;">
+                <!--this div will be fixed here and all row divs will be added by js file for each news-->
+                <div class="row g-0">
+
+                </div>
+            </div>
+
+        </section>
+
+        <!-- //modals------ -->
+        <section>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

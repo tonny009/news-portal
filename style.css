@@ -2,7 +2,7 @@
     background-color: rgb(174, 159, 189);
     padding: 10px;
     padding-left: 15px;
-    border-radius: 5px;
+    border-radius: 4px;
 
 }
 
@@ -17,7 +17,7 @@ ul li {
 }
 
 .total-results {
-    /* display: ; */
+    /* display: none; */
     background-color: rgb(112, 87, 87);
     padding: 10px;
     color: bisque;
@@ -33,6 +33,11 @@ ul li {
     margin-top: 4px;
     font-size: 19px;
     /* justify-content: flex-start; */
+}
+
+.author-img {
+    width: 40px;
+    border-radius: 50%;
 }
 
 /* for mobile device-------- */
