@@ -5,11 +5,97 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
 <body>
-    <h1>This is blog</h1>
+    <header>
+        <div class="container d-flex justify-content-between head-title">
+            <div>
+                <h1>News-Portal</h1>
+            </div>
+            <div>
+                <ul class=" nav justify-content-end nav-list">
+                    <li class="nav-item">
+                        <a class="nav-link oposite-page-btn-clr" aria-current="page" href="index.html">News</a>
+                    </li>
+                    <li class="nav-item present-page-btn-clr">
+                        <a class="nav-link disable text-white" href="#">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="container overflow-hidden text-center mt-4">
+            <div class="row g-5">
+                <div class="col-lg-12 col-sm-12 blog-box-clr">
+                    <h3>What is the difference between var,let and constant?</h3>
+                    <div class="text-start p-5 fs-5">
+                        <p>Var :The var is the oldest keyword to declare a variable in JavaScript.
+
+                            The scope of the var keyword is the global or
+                            function scope. It means variables defined outside the function can be accessed globally,
+                            and
+                            variables defined inside a particular function can be accessed within the function. </p>
+
+                        <p>Const :The const keyword has all the properties that are the same as the let keyword, except
+                            the
+                            user cannot update it. When users declare a const variable, they need to initialize it,
+                            otherwise,
+                            it returns an error. The user cannot update the const variable once it is declared. </p>
+                        <p>
+                            Let: The let keyword is an improved version of the var keyword. The scope of a let variable
+                            is only block scoped. It can’t be accessible outside the particular block ({block}).
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-sm-12 blog-box-clr ">
+                    <h3>What is the difference between arrow function and regular function? </h3>
+                    <div class="text-start p-5 fs-5">
+                        this value inside a regular function is dynamic and depends on the invocation. But this inside
+                        the arrow function is bound lexically and equals to this of the outer function.
+
+                        arguments object inside the regular functions contains the list of arguments. The arrow
+                        function, on the opposite, doesn't define arguments (but you can easily access the arrow
+                        function arguments using a rest parameter ...args).
+
+                        If the arrow function has one expression, then the expression is returned implicitly, even
+                        without using the return keyword.
+
+                        Last but not least, you can define methods using the arrow function syntax inside classes. Fat
+                        arrow methods bind this value to the class instance
+
+                    </div>
+                </div>
+                <div class="col-lg-12 col-sm-12 blog-box-clr ">
+                    <h3>What is the difference between map,foreach,filter and find? </h3>
+                    <div class="text-start p-5 fs-5">
+                        <p>Foreach: .forEach() is great we need to execute a function for each individual element in an
+                            array.It's returned value is undefined </p>
+                        <p>
+                            Map:.map() when we want to transform elements in an array. New array will be created as
+                            return value.
+                        </p>
+                        <p>
+                            Find:.find() When you want to select a single element from an array.
+                        </p>
+                        <p>Filter: .filter() when you want to select a subset of multiple elements from an array.It
+                            returns array with filtered value</p>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+    </main>
+    <script src="bootstrap/bootstrap.min.js"></script>
 </body>
 
 </html>

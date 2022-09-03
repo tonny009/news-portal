@@ -14,41 +14,43 @@
 <body>
     <!-- --header section with navbar -->
     <header>
-        <div class="container d-flex justify-content-between head-title">
-            <div>
-                <h1>News-Portal</h1>
+        <div class="container d-flex justify-content-between head-title mb-4">
+            <div class="fw-bold fs-1">
+                <p>World News</p>
             </div>
             <div>
                 <ul class=" nav justify-content-end nav-list">
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-current="page" href="#">News</a>
+                    <li class="nav-item present-page-btn-clr">
+                        <a class="nav-link disabled text-white " aria-current="page" href="#">News</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
+                    <li class="nav-item oposite-page-btn-clr">
+                        <a class="nav-link text-white" href="blog.html">Blog</a>
                     </li>
                 </ul>
             </div>
         </div>
     </header>
     <main class="container">
-
+        <!-- Category list----------- -->
         <section>
             <div id='news-menu-section' class="news-menu row justify-content-center ">
                 <!-- inside divs of buttons are made in js file .... -->
 
             </div>
         </section>
+
+        <!-- News list---------- -->
         <section>
             <!-- //loader---- -->
-            <div id="loader" style='height: 300px;' class="d-none d-flex justify-content-center align-items-center">
+            <div id="loader" style='height: 300px;' class="d-none d-flex justify-content-center align-items-center ">
                 <div class="spinner-border" role="status">
                     <span class="visually-hidden">Loading...</span>
                 </div>
             </div>
-            <div id="result-number-section" class="total-results d-none">
+            <div id="result-number-section" class="total-results d-none mt-4 mb-4">
                 <h2><span id="number-of-news">46</span> Results have been found</h2>
             </div>
-            <div id="no-found-msg" class="total-results d-none">
+            <div id="no-found-msg" class="total-results d-none mt-4 mb-4">
                 <h2>No Results have been found</h2>
             </div>
 
@@ -57,9 +59,6 @@
             <!-- results as cards---------- -->
             <div id="newsContainer" class="card mb-3" style="max-width: 1240px;">
                 <!--this div will be fixed here and all row divs will be added by js file for each news-->
-                <div class="row g-0">
-
-                </div>
             </div>
 
         </section>
@@ -71,7 +70,7 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="newsModalLabel">Modal title</h5>
+                            <h5 class="modal-title" id="newsModalLabel">Modal title:</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div id="news-other-details" class="modal-body">

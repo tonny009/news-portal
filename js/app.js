@@ -36,7 +36,8 @@ const loadDetailsNews = async (id) => {
 
 const displayDetail = data => {
     const modalTitle = document.getElementById('newsModalLabel');
-    modalTitle.innerHTML = data[0].details;
+    modalTitle.innerText = `News: 
+    ${data[0].details}`;
     const newsOtherDetails = document.getElementById('news-other-details');
     newsOtherDetails.innerHTML = `
     <p>Rating:${data[0].rating.number}</p>
@@ -83,9 +84,9 @@ const displayData = newsDataByCatID => {
         newsDataByCatID.forEach(news => {
             // console.log(news._id)
             const newsDiv = document.createElement('div');
-            newsDiv.classList.add('row', 'g-0');
+            newsDiv.classList.add('row', 'g-0', 'mb-4', 'news-card');
             newsDiv.innerHTML = `
-            <div class="row g-0">
+            
                         <div class="col-md-4">
                             <img src="${news.image_url}" class="img-fluid rounded-start" alt="...">
                         </div>
@@ -94,21 +95,21 @@ const displayData = newsDataByCatID => {
                                 <h3 class="card-title">${news.title}</h3>
                                 <p class="card-text">${news.details.length > 100 ? news.details.slice(0, 100) + '...' : news.details}.</p>
     
-                                <div class="d-flex mt-3 justify-content-between align-items-center">
+                                <div class="d-flex mt-5 justify-content-between align-items-center">
                                     <div class="d-flex  align-items-center ml-0">
                                         <img class="author-img" src="${news.author.img}" alt="" srcset="">
                                         <h5>${news.author.name === null ? "No Data" : news.author.name}</h5>
                                     </div>
                                     <div>
-                                        <h5>Views : ${news.total_view === null ? "No Viwers Data" : news.total_view}</h5>
+                                        <h4 >Views : ${news.total_view === null ? "No Viwers Data" : news.total_view}</h4>
                                     </div>
-                                    <button onclick="loadDetailsNews('${news._id}')" class="btn btn-primary" data-bs-toggle="modal"
+                                    <button onclick="loadDetailsNews('${news._id}')" class="btn btn-dark" data-bs-toggle="modal"
                                         data-bs-target="#exampleModal">
                                         Show News Details
                                     </button>
                                 </div>
                             </div>
-                        </div>`;
+                        `;
             newsContainer.appendChild(newsDiv);
         })
     }
