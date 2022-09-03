@@ -6,6 +6,7 @@ const loadCatData = async () => {
 }
 
 const loadData = async (catID) => {
+    toggleSpinner(true);
     const urlOfNews = `https://openapi.programming-hero.com/api/news/category/${catID}`;
     const res = await fetch(urlOfNews);
     const data = await res.json();
@@ -41,7 +42,7 @@ const displayCatData = categories => {
         categoryDiv.classList.add('col-lg');
         categoryDiv.classList.add('col-sm-12', 'buttons-mobile-view');
         categoryDiv.innerHTML = ` 
-<button onclick="loadData('${category.category_id}')" type="button" class="btn menu-btn btn-secondary">${category.category_name}</button>`;
+<button onclick="loadData('${category.category_id}')" type="button" class="btn  menu-btn btn-secondary">${category.category_name}</button>`;
 
         newMenuDiv.appendChild(categoryDiv);
 
@@ -99,8 +100,18 @@ const displayData = newsDataByCatID => {
             newsContainer.appendChild(newsDiv);
         })
     }
+    toggleSpinner(false);
 
 }
-
+//loadinggggg spinner-----------
+const toggleSpinner = isloading => {
+    const loaderSection = document.getElementById('loader');
+    if (isloading) {
+        loaderSection.classList.remove('d-none');
+    }
+    else {
+        loaderSection.classList.add('d-none');
+    }
+}
 
 loadCatData();
