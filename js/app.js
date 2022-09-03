@@ -18,7 +18,7 @@ const loadData = async (catID) => {
     try {
         const res = await fetch(urlOfNews);
         const data = await res.json();
-        const datas = data.data.sort((a, b) => parseFloat(b.total_view) - parseFloat(a.total_view));
+        const datas = data.data.sort((a, b) => (parseFloat(b.total_view) || 0) - (parseFloat(a.total_view) || 0));
         displayData(datas);
     }
     catch (error) {
