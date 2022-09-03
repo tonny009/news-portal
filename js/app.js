@@ -1,18 +1,29 @@
 const loadCatData = async () => {
     const url = `https://openapi.programming-hero.com/api/news/categories`;
-    const res = await fetch(url);
-    const data = await res.json();
-    displayCatData(data.data.news_category);
+    try {
+        const res = await fetch(url);
+        const data = await res.json();
+        displayCatData(data.data.news_category);
+    }
+    catch (error) {
+        console.log(error);
+
+    }
+
 }
 
 const loadData = async (catID) => {
     toggleSpinner(true);
     const urlOfNews = `https://openapi.programming-hero.com/api/news/category/${catID}`;
-    const res = await fetch(urlOfNews);
-    const data = await res.json();
-    const datas = data.data.sort((a, b) => parseFloat(b.total_view) - parseFloat(a.total_view));
-    displayData(datas);
-
+    try {
+        const res = await fetch(urlOfNews);
+        const data = await res.json();
+        const datas = data.data.sort((a, b) => parseFloat(b.total_view) - parseFloat(a.total_view));
+        displayData(datas);
+    }
+    catch (error) {
+        console.log(error);
+    }
 }
 
 // display data details with modals---------
@@ -27,7 +38,8 @@ const displayDetail = data => {
     const modalTitle = document.getElementById('newsModalLabel');
     modalTitle.innerHTML = data[0].details;
     const newsOtherDetails = document.getElementById('news-other-details');
-    newsOtherDetails.innerHTML = `<p>Rating:${data[0].rating.number}</p>
+    newsOtherDetails.innerHTML = `
+    <p>Rating:${data[0].rating.number}</p>
     <p>Published Date:${data[0].author.published_date}</p>`
 
 }
@@ -42,7 +54,7 @@ const displayCatData = categories => {
         categoryDiv.classList.add('col-lg');
         categoryDiv.classList.add('col-sm-12', 'buttons-mobile-view');
         categoryDiv.innerHTML = ` 
-<button onclick="loadData('${category.category_id}')" type="button" class="btn  menu-btn btn-secondary">${category.category_name}</button>`;
+        <button onclick="loadData('${category.category_id}')" type="button" class="btn  menu-btn btn-secondary">${category.category_name}</button>`;
 
         newMenuDiv.appendChild(categoryDiv);
 
